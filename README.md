@@ -11,8 +11,7 @@ Welcome to the Restaurant Menu CMS project! This CMS is designed to simplify the
 - Multimedia support for uploading and displaying images of menu items
 
 ## Project Structure and Technoglogies 
-![Image Description](../content-management-system
-/src/assets/Picture1.png)
+![Image Description](src/assets/Picture1.png)
 
 
 ## Development Phase
