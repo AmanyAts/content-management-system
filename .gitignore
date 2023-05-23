@@ -53,6 +53,8 @@ src/app/services/APIsUrls.ts
 
 #enviroment 
 
-src/environments/enviroment.prod.ts
+
+src/environments/environment.prod.ts
 src/environments/environment.ts
+
 
