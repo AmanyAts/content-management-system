@@ -10,14 +10,14 @@ import { FileUpload } from '../models/file-upload.model';
   providedIn: 'root'
 })
 export class FileUploadService {
- 
+
   // @Input() subcatogary:any
 
 
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
 
-  pushFileToStorage(fileUpload: FileUpload ,catogary:any,productNum:any): Observable<any> {
-    let basePath = '/Bon Cafe/Product/'+catogary+'/'+localStorage.getItem('id');
+  pushFileToStorage(fileUpload: FileUpload, catogary: any, productNum: any): Observable<any> {
+    let basePath = '/Bon Cafe/Product/' + catogary + '/' + localStorage.getItem('id');
 
     console.log(fileUpload.file.name)
     const filePath = `${basePath}/${fileUpload.file.name}`;
@@ -33,41 +33,18 @@ export class FileUploadService {
           localStorage.setItem('image', fileUpload.image)
 
         });
-        
+
       })
     ).subscribe();
 
     return uploadTask.percentageChanges();
   }
 
-  private saveFileData(fileUpload: FileUpload, fileImage:any,basePath:any): void {
-    // console.log(this.basePath+'/image')
-    // console.log(fileUpload)
-    // console.log(fileImage)
+  private saveFileData(fileUpload: FileUpload, fileImage: any, basePath: any): void {
+
     this.db.object(basePath).update({ image: fileImage });
 
-    // this.db.list(this.basePath+'/image').push(fileImage);
   }
 
-  // getFiles(numberItems:any): AngularFireList<FileUpload> {
-  //   return this.db.list(this.basePath, ref =>
-  //     ref.limitToLast(numberItems));
-  // }
-
-  // deleteFile(fileUpload: FileUpload): void {
-  //   this.deleteFileDatabase(fileUpload.key)
-  //     .then(() => {
-  //       this.deleteFileStorage(fileUpload.name);
-  //     })
-  //     .catch(error => console.log(error));
-  // }
-
-  // private deleteFileDatabase(key: string): Promise<void> {
-  //   return this.db.list(this.basePath).remove(key);
-  // }
-
-  // private deleteFileStorage(name: string): void {
-  //   const storageRef = this.storage.ref(this.basePath);
-  //   storageRef.child(name).delete();
-  // }
+ 
 }

@@ -11,16 +11,16 @@ export class UploadFileComponent implements OnInit {
   selectedFiles!: any;
   currentFileUpload!: FileUpload;
   percentage!: number;
-  @Input() catogary:any
-  @Input() productNum:any
-  url= localStorage.getItem('image')
+  @Input() catogary: any
+  @Input() productNum: any
+  url = localStorage.getItem('image')
 
 
   constructor(private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
   }
-  selectFile(event:any): void {
+  selectFile(event: any): void {
     this.selectedFiles = event.target.files;
     this.uploadImage(event)
   }
@@ -29,7 +29,7 @@ export class UploadFileComponent implements OnInit {
     this.selectedFiles = undefined;
 
     this.currentFileUpload = new FileUpload(file);
-    this.uploadService.pushFileToStorage(this.currentFileUpload,this.catogary,this.productNum).subscribe(
+    this.uploadService.pushFileToStorage(this.currentFileUpload, this.catogary, this.productNum).subscribe(
       percentage => {
         console.log(percentage)
         this.percentage = Math.round(percentage);
@@ -40,7 +40,7 @@ export class UploadFileComponent implements OnInit {
     );
   }
 
-  uploadImage(event:any){
+  uploadImage(event: any) {
     let fileType = event.target.files[0].type;
     if (fileType.match(/image\/*/)) {
       let reader = new FileReader();

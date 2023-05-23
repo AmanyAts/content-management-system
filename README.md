@@ -1,27 +1,35 @@
-# PreOrderCMS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+# Restaurant Menu Content Management System (CMS)
 
-## Development server
+Welcome to the Restaurant Menu CMS project! This CMS is designed to simplify the management and updating of menu items for restaurants. It provides a user-friendly interface for managing menu content, such as food and beverage items, descriptions, and prices. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Intuitive and user-friendly interface for managing menu items
+- Easy editing and updating of menu descriptions, and prices.
+- Support for categorizing menu items and managing categories
+- Multimedia support for uploading and displaying images of menu items
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project Structure and Technoglogies 
+![Image Description](../pre-order_cms/src/assets/Picture1.png)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Development Phase
 
-## Running unit tests
+The project is currently in the development phase and is being actively worked on. As a developer, you can contribute to the project by following these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository locally using the following command:
+   ```
+   git clone https://github.com/AmanyAts/content-management-system.git
+   ```
 
-## Running end-to-end tests
+2. Create a new branch for your development work:
+   ```
+   git checkout -b feature/your-feature-name
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Implement your desired features or fixes in the project codebase.
 
-## Further help
+4. Test your changes locally to ensure they function as expected.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+

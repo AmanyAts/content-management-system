@@ -119,7 +119,6 @@ export class NewProductComponent implements OnInit {
     }
 
     this.addingProduct.patchValue({
-      // productImage:this.productImage,
       productName: this.productName,
       description: this.productDec,
       checkBox: this.productPrice,
