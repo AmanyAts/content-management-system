@@ -1,0 +1,16 @@
+<div class="container">
+<div [formGroup]="catogaryGroup " *ngFor="let i of categories">
+
+
+<div (change)="afterSelect()"  class="form-check">
+  
+    <input formControlName="catogary" class="form-check-input" type="radio" name="catogary" id="flexRadioDefault1" value="{{i}}">
+    <label class="form-check-label" for="catogary">
+      
+     <div>{{i.replace("/"," ")}}</div>  
+    </label>
+  </div>
+
+
+</div>
+</div>

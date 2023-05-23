@@ -1,0 +1,120 @@
+
+
+<div class="container-fluid">
+
+        <div class="row">
+            <p>Please select catogary</p>
+            <app-categories class="col" (selectCatogary)=selectedCatogary($event) ></app-categories>
+
+          <!-- </div> -->
+   
+
+          
+          <div class="col-9">
+       
+<form [formGroup]="addingProduct " class=" container row g-3" >
+  <h4 class="card-title">Add product</h4>
+  <div class=" col" >
+    <app-upload-file [catogary]="catogary"  ></app-upload-file>
+  </div>
+
+  <section class="col-9">
+    
+    <div class="form-outline mb-4">
+      <label  class="form-label" for="form7Example1">* Product Name</label>
+<!-- [ngClass]="{'input-valid':productName.invalid==true}" -->
+     
+      <input  formControlName="productName" type="text" id="form7Example1" class="form-control"  placeholder="Name of product" required name="productName"   />
+
+    </div>
+    
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form7Example2">    Description: </label>
+
+        <textarea formControlName="description" type="text" id="form7Example2" class="form-control" placeholder="Description" name="dec" ></textarea>
+      </div>
+
+    </section>
+
+
+
+      <section id="checkBox" class="row">
+
+
+        <section class=" shadow p-3 mb-5 bg-body rounded container-fluid col">
+       
+            <h5>* Sizes and prices </h5>
+            <p style="font-size: 10px;">Select at least one</p>
+    
+                 <div >
+                 
+
+                    <div formGroupName="checkBox" class=" form-select checkbox" *ngFor="let i of sizePrice"  class="form-check">
+                        
+                        <label class="form-check-label" for="flexCheckDefault">
+                          
+                          <input (click)="validatePriceInput(i.size,i.price)" formControlName="{{i.size}}"  value="{{i.size}}" class="form-check-input "  type="checkbox" id="flexCheckDefault" required name="{{i.size}} ">
+
+                            {{i.size}}                   
+                                     <input formControlName="{{i.price}}"  class="form-control form-control-sm price " type="text" placeholder="price" aria-label=".form-control-sm example"  name="price">
+
+                  
+
+                        </label>
+
+                      </div> 
+
+
+
+
+                    </div>
+    
+                  
+          
+            
+          </section>
+
+          <section class=" shadow p-3 mb-5 bg-body rounded container-fluid col">
+            <h5>Additional Options </h5>
+
+            <div class="one" formGroupName="Additional">
+
+              
+                  <label class="form-check-label" for="flexCheckDefault">
+                    <i (click)="addItem()" class="bi bi-plus-lg"> Add new Option </i>
+
+                   
+                    <div formArrayName="items" *ngFor="let item of items.controls; let i= index" >
+                      <div [formGroupName]="i">
+
+                    <input [class.has.error]="validateField(item)" formControlName="optionName"  class="form-control form-control-sm option " type="text" placeholder="option name" aria-label=".form-control-sm example">
+                    <br>
+                    <input formControlName="optionPrice"  class="form-control form-control-sm price" type="text" placeholder="price" aria-label=".form-control-sm example">
+                    <p>--------------------------------------</p>
+                  </div>
+                </div>
+                  </label>
+
+                </div>
+
+               
+          </section>
+      </section>
+     
+     
+
+
+      
+    <div class="col-12">
+      <button [disabled]="addingProduct.invalid" class="btn btn-primary add" type="submit" (click)="addProuct()">Add </button>
+    </div>
+
+
+
+  </form>
+          </div>
+         
+        </div>
+
+      
+  </div>

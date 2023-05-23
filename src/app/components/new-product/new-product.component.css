@@ -1,0 +1,43 @@
+
+
+.container-fluid{
+    background: #FFFFFF;
+}
+
+
+.input-valid{
+    border:5px solid red;
+}
+
+input{
+    border:1px solid #000000;
+    font-family:'HelveticaNeue','Arial', sans-serif;
+    letter-spacing: .8px;
+  }
+
+.labelImg{
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.add{
+
+    font-size: 16px;
+    font-family: monospace;
+    color: white;
+    border: #e45523;
+    background-color: #e45523;;
+    border-radius: 20px;
+    margin-top: -10%;
+
+}
+
+.card-title{
+    font-family: monospace;
+    color: #674F04;
+    font-size: 25px;
+}
+
+.p{
+    font-size: 10px;
+}

@@ -1,0 +1,10 @@
+<!-- @Input() productName!:any
+@Input() productImage!:any
+@Input() productDec!:any
+@Input() productPrice!:any
+@Input() productOption!:any -->
+
+<div *ngIf="productLoaded | async">
+    <app-new-product [productName]="productName" [productDec]="productDec" [productOption]="productOption"  [productPrice]="productPrice" [productImage]="productImage" [productId]="productId" [productCatogary]="productCatogary"></app-new-product>
+
+</div>

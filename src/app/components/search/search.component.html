@@ -1,0 +1,4 @@
+<form class="d-flex" role="search">
+    <input  [formControl]="searchBar" class="form-control me-2" type="search" placeholder="Search about product" aria-label="Search" (ngModelChange)="searchForProduct($event)">
+    <button class="btn"><i class="fa fa-search"></i></button>
+  </form>

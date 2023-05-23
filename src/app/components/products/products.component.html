@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="split left">
+  <nav id="sidebar">
+    <div class="sidebar-header">
+        Categories
+    </div>
+
+
+<h6><app-categories (selectCatogary)=selectedCatogaryFunction($event) ></app-categories></h6>
+   
+  </nav>
+</div>
+
+
+<div class="split right">
+    <input type="search" [(ngModel)] = searchWord placeholder="Find product">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let x of products | filiter: searchWord ">
+      <div>
+         <div class="col">   
+      <div class="card h-100">
+        <img src={{x.image}} class="card-img-top"
+          alt="" />
+        <div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+       
+        </div>
+        <div class="card-footer">
+          <div class="text-center"><a  [routerLink]="['edit-product']" [queryParams]="{ productId: x.id ,productCatogary:x.catogary  }" class="btn btn-outline-dark mt-auto" href="#">Edit</a><button (click)="deleteProudct(x.id,x.catogary)"  class="btn"><i class="fa fa-trash"></i></button></div>
+
+          
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- </div> -->
+  
+
+
+<!--<div class="container-fluid">
+<div class="row">
+    <div class="col">
+
+      <app-categories (selectCatogary)=selectedCatogaryFunction($event) ></app-categories>
+    </div>
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a </p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+    </div>
+    
+ <div class="col-9">
+ 
+    <div class="col-md-10 col-8">
+      <h3> products </h3> 
+      <div class="row row-cols-1 row-cols-md-3 g-1">    
+        <div *ngFor="let x of products; let i = index" >
+          <div *ngIf="x.name.startsWith(searchBar()) ">
+
+         
+          <div class="card-deck">
+           <div class="card" style="max-width: 400px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src={{x.image}} class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{x.name}}</h5> 
+
+              <div><button class="btn"><i class="fa fa-eye"></i></button>
+                  <button (click)="deleteProudct(x.id,x.catogary)"  class="btn"><i class="fa fa-trash"></i></button></div>          
+                  <a  [routerLink]="['edit-product']" [queryParams]="{ productId: x.id ,productCatogary:x.catogary  }" class="btn btn-primary">Edit</a>
+              </div>
+            </div>
+          </div>
+           </div>
+          </div>
+        </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+  -->

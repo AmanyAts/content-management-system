@@ -1,0 +1,43 @@
+<!-- <label>
+    <input
+      type="file"
+      class="text-nowrap text-truncate"
+      (change)="selectFile($event)"
+    />
+  </label> -->
+
+  <input
+  type="file"
+  id="img"
+  style="display:none"
+  accept="image/*"
+  (change)="selectFile($event)"
+  formControlName="productImage"
+/>
+
+<label  class="labelImg " for="img"><img  [src]="url" title="upload Picture" height="150px" width="150px" />
+</label>
+
+  
+  <button
+    class="btn btn-success btn-sm"
+    [disabled]="!selectedFiles"
+    (click)="upload()"
+    
+  >
+    Upload
+  </button>
+  
+  <div *ngIf="currentFileUpload" class="progress mt-2">
+    <div
+      class="progress-bar progress-bar-info"
+      role="progressbar"
+      attr.aria-valuenow="{{ percentage }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: percentage + '%' }"
+    >
+      {{ percentage }}%
+    </div>
+  </div>
+  
